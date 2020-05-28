@@ -4,9 +4,10 @@ const tasks = require('../controllers/tasks');
 router.route('/tasks')
     .post(tasks.add)
     .get(tasks.index)
-    .put(tasks.update)
     
-router.get('/tasks/:id', tasks.getById);
-router.delete('/tasks/:id', tasks.delete);
+router.route('/tasks/:id')
+    .get(tasks.getById)
+    .put(tasks.update)
+    .delete(tasks.delete)
 
 module.exports = router;
