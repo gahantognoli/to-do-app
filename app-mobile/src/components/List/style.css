@@ -1,0 +1,20 @@
+.taskList {
+    margin-top: 40px;
+}
+
+.taskList label {
+    font-size: 32px;
+}
+
+.container-checkbox {
+    display: flex;
+    align-content: center;
+    margin-bottom: 25px;
+}
+
+.checkbox {
+    height: 32px;
+    width: 32px;
+    margin: 0;
+    margin-right: 10px;
+}
