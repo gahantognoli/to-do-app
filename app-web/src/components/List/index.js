@@ -2,21 +2,22 @@ import React from 'react';
 
 import './style.css';
 
-const List = () => {
+const List = (props) => {
+
     return (
         <div className="taskList">
-            <div className="container-checkbox">
-                <input type="checkbox" className="checkbox" />
-                <label>Teste</label>
-            </div>
-            <div className="container-checkbox">
-                <input type="checkbox" className="checkbox" />
-                <label className="text-strike">Teste</label>
-            </div>
-            <div className="container-checkbox">
-                <input type="checkbox" className="checkbox" />
-                <label>Teste</label>
-            </div>
+            {
+                props.tasks.map(task => {
+                    const classDone = task.done ? 'task-done' : '';
+                    return <div className="container-checkbox" key={task.id}>
+                        <input type="checkbox" 
+                            className="checkbox" 
+                            checked={task.done}
+                            onClick={() => props.update(task.id)} />
+                        <label className={classDone}>{task.description}</label>
+                    </div>
+                })
+            }
         </div>
     );
 }

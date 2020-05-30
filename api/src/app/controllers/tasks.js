@@ -13,6 +13,7 @@ module.exports = {
     add: async (req, res) => {
         try {
             const newTask = req.body;
+            console.log('***ADD***', newTask)
             const taskReturn = await tasks.add(newTask);
             res.status(201).json(taskReturn);
         } catch (error) {

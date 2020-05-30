@@ -18,3 +18,8 @@
     margin: 0;
     margin-right: 10px;
 }
+
+.task-done {
+    text-decoration: line-through;
+    color: #bbb;
+}
